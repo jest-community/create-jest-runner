@@ -2097,9 +2097,9 @@ jest-validate@^21.0.2:
     leven "^2.1.0"
     pretty-format "^21.0.2"
 
-jest-worker@^21.2.1:
-  version "21.2.1"
-  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-21.2.1.tgz#231a24007e73f5faa647d7bc02761d8fad957d73"
+jest-worker@^22.0.0:
+  version "22.4.3"
+  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-22.4.3.tgz#5c421417cba1c0abf64bf56bd5fb7968d79dd40b"
   dependencies:
     merge-stream "^1.0.1"
 

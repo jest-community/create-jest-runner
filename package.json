@@ -19,7 +19,7 @@
     "format": "prettier --single-quote --trailing-comma all --write \"!(build)/**/*.js\""
   },
   "dependencies": {
-    "jest-worker": "^21.2.1"
+    "jest-worker": "^22.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
