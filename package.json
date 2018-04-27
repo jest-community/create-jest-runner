@@ -29,12 +29,12 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.5.0",
-    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-jest": "^21.15.1",
     "eslint-plugin-prettier": "^2.2.0",
-    "execa": "^0.8.0",
+    "execa": "^0.10.0",
     "jest": "^21.0.2",
     "prettier": "^1.7.4"
   }
