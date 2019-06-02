@@ -4,7 +4,7 @@
 
 ### Install
 
-Install `jest`_(it needs Jest 21+)_ and `jest-runner-eslint`
+Install `jest`_(it needs Jest 21+)_ and `generated-jest-runner`
 
 ```bash
 yarn add --dev jest generated-jest-runner
