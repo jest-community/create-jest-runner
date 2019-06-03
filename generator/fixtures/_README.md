@@ -32,7 +32,7 @@ Or in `jest.config.js`
 
 ```js
 module.exports = {
-  runner: 'generated-jest-runner',
+  runner: require.resolve('generated-jest-runner'),
 };
 ```
 
