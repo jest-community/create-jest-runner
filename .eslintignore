@@ -1,2 +1,4 @@
 **/node_modules
 build
+generator/fixtures
+integrationTests/__fixtures__
