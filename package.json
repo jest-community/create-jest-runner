@@ -12,7 +12,8 @@
     "generator/"
   ],
   "scripts": {
-    "pre-commit": "yarn lint && yarn build && yarn test",
+    "pre-commit": "yarn lint && yarn test",
+    "pretest": "yarn build",
     "test": "jest --no-colors",
     "lint": "eslint .",
     "watch": "babel lib -w --ignore **/*.test.js,integration -d build",
