@@ -17,7 +17,7 @@
     "lint": "eslint .",
     "watch": "babel lib -w --ignore **/*.test.js,integration -d build",
     "build": "babel lib --ignore **/*.test.js,integration -d build",
-    "prepublish": "yarn pre-commit",
+    "prepublishOnly": "yarn pre-commit",
     "format": "prettier --single-quote --trailing-comma all --write \"!(build)/**/*.js\""
   },
   "dependencies": {
