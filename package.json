@@ -21,14 +21,14 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "jest-worker": "^24.0.0",
+    "jest-worker": "^25.1.0",
     "throat": "^4.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "babel-jest": "^24.0.0",
+    "babel-jest": "^25.1.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.0.0",
