@@ -28,7 +28,7 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "babel-jest": "^25.1.0",
+    "babel-jest": "^25.2.6",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.0.0",
@@ -36,7 +36,7 @@
     "eslint-plugin-jest": "^22.2.2",
     "eslint-plugin-prettier": "^3.0.1",
     "execa": "^1.0.0",
-    "jest": "^24.0.0",
+    "jest": "^25.2.7",
     "prettier": "^1.7.4"
   },
   "bin": {
