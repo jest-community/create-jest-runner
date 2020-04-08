@@ -1,16 +1,9 @@
 {
-  "extends": ["airbnb-base", "prettier"],
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "plugins": ["prettier", "jest"],
   "rules": {
     "no-underscore-dangle": 0,
-    "arrow-body-style": 0,
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "trailingComma": "all"
-      }
-    ]
+    "max-classes-per-file": 0
   },
   "env": {
     "jest/globals": true
