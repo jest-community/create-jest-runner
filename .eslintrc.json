@@ -7,5 +7,13 @@
   },
   "env": {
     "jest/globals": true
-  }
+  },
+  "overrides": [
+    {
+      "files": "generator/**/*",
+      "rules": {
+        "import/no-unresolved": 0
+      }
+    }
+  ]
 }
