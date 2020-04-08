@@ -37,7 +37,8 @@
     "eslint-plugin-prettier": "^3.0.1",
     "execa": "^3.0.0",
     "jest": "^25.2.7",
-    "prettier": "^1.7.4"
+    "prettier": "^1.7.4",
+    "strip-ansi": "^6.0.0"
   },
   "bin": {
     "create-jest-runner": "./generator/index.js"

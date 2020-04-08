@@ -1,10 +1,13 @@
-const execa = require('execa'); // eslint-disable-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies
+const execa = require('execa');
 const path = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const stripAnsi = require('strip-ansi');
 
 const rootDir = path.resolve(__dirname, '..');
 
 const normalize = output =>
-  output
+  stripAnsi(output)
     .replace(/\(?\d*\.?\d+m?s\)?/g, '')
     .replace(/, estimated/g, '')
     .replace(new RegExp(rootDir, 'g'), '/mocked-path-to-jest-runner-mocha')
