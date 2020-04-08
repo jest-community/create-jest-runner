@@ -1,4 +1,5 @@
 const fs = require('fs');
+// eslint-disable-next-line import/no-unresolved
 const { pass, fail } = require('create-jest-runner');
 
 module.exports = ({ testPath }) => {
