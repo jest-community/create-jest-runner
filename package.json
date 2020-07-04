@@ -5,8 +5,8 @@
   "author": "Rogelio Guzman <rogelioguzmanh@gmail.com>",
   "description": "A simple way of creating a Jest runner",
   "license": "MIT",
-  "repository": "https://github.com/rogeliog/create-jest-runner.git",
-  "homepage": "https://github.com/rogeliog/create-jest-runner",
+  "repository": "https://github.com/jest-community/create-jest-runner.git",
+  "homepage": "https://github.com/jest-community/create-jest-runner",
   "files": [
     "build/",
     "generator/"
