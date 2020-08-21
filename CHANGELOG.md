@@ -1,6 +1,12 @@
 ## master
 
+## 0.7.0
+
 - Update dependencies and drop support for Node 8
+
+## 0.6.0
+
+- Update dependencies and drop Node 6
 
 ## 0.5.0
 
