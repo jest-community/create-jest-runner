@@ -14,6 +14,9 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
+    "prettier:run": "prettier '*.md' '.github/**' '*.json' '**/package.json' '.vscode/*.json' 'generator/fixtures/*'",
+    "prettier:check": "yarn prettier:run --check",
+    "prettier:write": "yarn prettier:run --write",
     "watch": "babel lib -w --ignore **/*.test.js,integration -d build",
     "build": "babel lib --ignore **/*.test.js,integration -d build",
     "prepare": "yarn build",
