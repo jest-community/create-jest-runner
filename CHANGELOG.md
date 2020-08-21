@@ -1,5 +1,7 @@
 ## master
 
+* Update dependencies and drop support for Node 8
+
 ## 0.5.0
 
 ### Features
