@@ -24,6 +24,8 @@ jobs:
         run: yarn build
       - name: run eslint
         run: yarn lint
+      - name: run prettier
+        run: yarn prettier:check
   test-node:
     name: Test on Node.js v${{ matrix.node-version }}
     strategy:

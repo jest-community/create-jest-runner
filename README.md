@@ -16,8 +16,8 @@ create-jest-runner takes care of handling the appropriate parallelization and cr
 
 You simply need two files:
 
-* Entry file: Used by Jest as an entrypoint to your runner.
-* Run file: Runs once per test file, and it encapsulates the logic of your runner
+- Entry file: Used by Jest as an entrypoint to your runner.
+- Run file: Runs once per test file, and it encapsulates the logic of your runner
 
 ### 1) Create your entry file
 
@@ -29,9 +29,9 @@ module.exports = createJestRunner(require.resolve('./run'));
 
 #### createJestRunner(pathToRunFile, config?: { getExtraOptions })
 
-* `pathToRunFile`: path to your run file.
-* `config`: Optional argument for configuring the runner.
-  * `getExtraOptions`: `() => object` used for passing extra options to the runner. It needs to be a serializable object because it will be send to a different Node process.
+- `pathToRunFile`: path to your run file.
+- `config`: Optional argument for configuring the runner.
+  - `getExtraOptions`: `() => object` used for passing extra options to the runner. It needs to be a serializable object because it will be send to a different Node process.
 
 ### 2) Create your run file
 
@@ -45,16 +45,16 @@ This file should export a function that receives one parameter with the options
 
 #### `options: { testPath, config, globalConfig }`
 
-* `testPath`: Path of the file that is going to be tests
-* `config`: Jest Project config used by this file
-* `globalConfig`: Jest global config
-* `extraOptions`: The return value of the `{ getExtraOptions }` argument of `createJestRunner(...)` the entry file.
+- `testPath`: Path of the file that is going to be tests
+- `config`: Jest Project config used by this file
+- `globalConfig`: Jest global config
+- `extraOptions`: The return value of the `{ getExtraOptions }` argument of `createJestRunner(...)` the entry file.
 
 You can return one of the following values:
 
-* `testResult`: Needs to be an object of type https://github.com/facebook/jest/blob/4d3c1a187bd429fd8611f6b0f19e4aa486fa2a85/packages/jest-test-result/src/types.ts#L103-L135
-* `Promise<testResult|Error>`: needs to be of above type.
-* `Error`: good for reporting system error, not failed tests.
+- `testResult`: Needs to be an object of type https://github.com/facebook/jest/blob/4d3c1a187bd429fd8611f6b0f19e4aa486fa2a85/packages/jest-test-result/src/types.ts#L103-L135
+- `Promise<testResult|Error>`: needs to be of above type.
+- `Error`: good for reporting system error, not failed tests.
 
 ## Example of a runner
 
