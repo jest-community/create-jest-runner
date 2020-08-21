@@ -17,10 +17,9 @@
     "prettier:run": "prettier '*.md' '.github/**' '*.json' '**/package.json' '.vscode/*.json' 'generator/fixtures/*'",
     "prettier:check": "yarn prettier:run --check",
     "prettier:write": "yarn prettier:run --write",
-    "watch": "babel lib -w --ignore **/*.test.js,integration -d build",
-    "build": "babel lib --ignore **/*.test.js,integration -d build",
-    "prepare": "yarn build",
-    "format": "prettier --write \"!(build)/**/*.js\""
+    "watch": "babel lib -w --ignore '**/*.test.js,integration' -d build",
+    "build": "babel lib --ignore '**/*.test.js,integration' -d build",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -43,9 +42,7 @@
     "prettier": "^2.0.5",
     "strip-ansi": "^6.0.0"
   },
-  "bin": {
-    "create-jest-runner": "./generator/index.js"
-  },
+  "bin": "./generator/index.js",
   "prettier": {
     "arrowParens": "avoid",
     "singleQuote": true,
