@@ -3,8 +3,9 @@ const { pass, fail, skip, todo } = require('../..');
 
 module.exports = ({ testPath }) => {
   const start = Date.now();
+  // we don't want the timestamp in teh reporter result for our snapshots
+  const end = start;
   const contents = fs.readFileSync(testPath, 'utf8');
-  const end = Date.now();
 
   if (contents.includes('⚔️🏃')) {
     return pass({ start, end, test: { path: testPath } });
