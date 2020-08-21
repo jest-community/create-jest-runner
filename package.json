@@ -43,9 +43,7 @@
     "prettier": "^2.0.5",
     "strip-ansi": "^6.0.0"
   },
-  "bin": {
-    "create-jest-runner": "./generator/index.js"
-  },
+  "bin": "./generator/index.js",
   "prettier": {
     "arrowParens": "avoid",
     "singleQuote": true,
