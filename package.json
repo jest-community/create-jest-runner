@@ -20,30 +20,31 @@
     "format": "prettier --write \"!(build)/**/*.js\""
   },
   "dependencies": {
-    "chalk": "^3.0.0",
-    "jest-worker": "^25.1.0",
+    "chalk": "^4.1.0",
+    "jest-worker": "^26.3.0",
     "throat": "^5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "babel-jest": "^25.2.6",
-    "eslint": "^6.8.0",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.0.1",
-    "execa": "^3.0.0",
-    "jest": "^25.2.7",
-    "prettier": "^1.7.4",
+    "execa": "^4.0.3",
+    "jest": "^26.4.1",
+    "prettier": "^2.0.5",
     "strip-ansi": "^6.0.0"
   },
   "bin": {
     "create-jest-runner": "./generator/index.js"
   },
   "prettier": {
+    "arrowParens": "avoid",
     "singleQuote": true,
     "trailingComma": "all"
   }

@@ -8,7 +8,8 @@ const rootDir = path.resolve(__dirname, '..');
 
 const normalize = output =>
   stripAnsi(output)
-    .replace(/\(?\d*\.?\d+m?s\)?/g, '')
+    .replace(/\d*\.?\d+ m?s\b/g, '')
+    .replace(/\s*\(\d*\.?\d+ m?s\b\)$/gm, '')
     .replace(/, estimated/g, '')
     .replace(new RegExp(rootDir, 'g'), '/mocked-path-to-jest-runner-mocha')
     .replace(new RegExp('.*at .*\\n', 'g'), 'mocked-stack-trace')
