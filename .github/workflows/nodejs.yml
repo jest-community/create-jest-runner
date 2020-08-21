@@ -82,9 +82,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ubuntu-latest-node-12.x-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-12.x-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ubuntu-latest-node-12.x-yarn-
+            ${{ runner.os }}-node-12.x-yarn-
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: 12.x
