@@ -2,14 +2,22 @@
   "name": "create-jest-runner",
   "version": "0.7.0",
   "main": "build/index.js",
+  "types": "types/index.d.ts",
   "author": "Rogelio Guzman <rogelioguzmanh@gmail.com>",
+  "contributors": [
+    {
+      "name": "Lok Shun Hung",
+      "url": "https://github.com/lokshunhung"
+    }
+  ],
   "description": "A simple way of creating a Jest runner",
   "license": "MIT",
   "repository": "https://github.com/jest-community/create-jest-runner.git",
   "homepage": "https://github.com/jest-community/create-jest-runner",
   "files": [
     "build/",
-    "generator/"
+    "generator/",
+    "types/"
   ],
   "scripts": {
     "test": "jest",
