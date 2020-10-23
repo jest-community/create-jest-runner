@@ -20,7 +20,7 @@
     "types/"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-color",
     "lint": "eslint .",
     "prettier:run": "prettier '*.md' '.github/**' '*.json' '**/package.json' '.vscode/*.json' 'generator/fixtures/*'",
     "prettier:check": "yarn prettier:run --check",
