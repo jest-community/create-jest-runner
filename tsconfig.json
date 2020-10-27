@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES5",
+    "module": "CommonJS",
+    "lib": ["ES2018"],
+    // "allowJs": true,
+    // "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./build/",
+    "noErrorTruncation": true,
+    "isolatedModules": true,
+    "importsNotUsedAsValues": "error",
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./lib/"],
+  "exclude": ["./build/"]
+}

@@ -1,20 +1,44 @@
-import throat from 'throat';
+import type * as JestResult from '@jest/test-result';
+import type { Config } from '@jest/types';
+import type * as JestRunner from 'jest-runner';
 import { Worker } from 'jest-worker';
+import throat from 'throat';
+import type { CreateRunnerOptions, Path, TestRunner } from './types';
 
 class CancelRun extends Error {
-  constructor(message) {
+  constructor(message?: string) {
     super(message);
     this.name = 'CancelRun';
   }
 }
 
-const createRunner = (runPath, { getExtraOptions } = {}) => {
-  class BaseTestRunner {
-    constructor(globalConfig) {
+export default function createRunner<
+  ExtraOptionsType extends Record<string, unknown>,
+>(
+  runPath: Path,
+  { getExtraOptions }: CreateRunnerOptions<ExtraOptionsType> = {},
+): typeof TestRunner {
+  return class BaseTestRunner implements TestRunner {
+    readonly _globalConfig: Config.GlobalConfig;
+
+    readonly _context: JestRunner.TestRunnerContext;
+
+    constructor(
+      globalConfig: Config.GlobalConfig,
+      context?: JestRunner.TestRunnerContext,
+    ) {
       this._globalConfig = globalConfig;
+      this._context = context || {};
     }
 
-    runTests(tests, watcher, onStart, onResult, onFailure, options) {
+    runTests(
+      tests: Array<JestRunner.Test>,
+      watcher: JestRunner.TestWatcher,
+      onStart: JestRunner.OnTestStart,
+      onResult: JestRunner.OnTestSuccess,
+      onFailure: JestRunner.OnTestFailure,
+      options: JestRunner.TestRunnerOptions,
+    ): Promise<void> {
       return options.serial
         ? this._createInBandTestRun(
             tests,
@@ -35,13 +59,13 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
     }
 
     _createInBandTestRun(
-      tests,
-      watcher,
-      onStart,
-      onResult,
-      onFailure,
-      options,
-    ) {
+      tests: Array<JestRunner.Test>,
+      watcher: JestRunner.TestWatcher,
+      onStart: JestRunner.OnTestStart,
+      onResult: JestRunner.OnTestSuccess,
+      onFailure: JestRunner.OnTestFailure,
+      options: JestRunner.TestRunnerOptions,
+    ): Promise<void> {
       const mutex = throat(1);
       return tests.reduce(
         (promise, test) =>
@@ -53,7 +77,7 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
                 }
 
                 return onStart(test).then(() => {
-                  // eslint-disable-next-line import/no-dynamic-require, global-require
+                  // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
                   const runner = require(runPath);
                   const baseOptions = {
                     config: test.context.config,
@@ -81,13 +105,13 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
     }
 
     _createParallelTestRun(
-      tests,
-      watcher,
-      onStart,
-      onResult,
-      onFailure,
-      options,
-    ) {
+      tests: Array<JestRunner.Test>,
+      watcher: JestRunner.TestWatcher,
+      onStart: JestRunner.OnTestStart,
+      onResult: JestRunner.OnTestSuccess,
+      onFailure: JestRunner.OnTestFailure,
+      options: JestRunner.TestRunnerOptions,
+    ): Promise<void> {
       const worker = new Worker(runPath, {
         exposedMethods: ['default'],
         numWorkers: this._globalConfig.maxWorkers,
@@ -96,7 +120,7 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
 
       const mutex = throat(this._globalConfig.maxWorkers);
 
-      const runTestInWorker = test =>
+      const runTestInWorker = (test: JestRunner.Test) =>
         mutex(() => {
           if (watcher.isInterrupted()) {
             throw new CancelRun();
@@ -114,12 +138,16 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
               extraOptions: getExtraOptions ? getExtraOptions() : {},
             };
 
+            // @ts-expect-error -- the required module should have a default export
             return worker.default(baseOptions);
           });
         });
 
-      const onError = (err, test) =>
-        onFailure(test, err).then(() => {
+      const onError = (
+        err: JestResult.SerializableError,
+        test: JestRunner.Test,
+      ) => {
+        return onFailure(test, err).then(() => {
           if (err.type === 'ProcessTerminatedError') {
             // eslint-disable-next-line no-console
             console.error(
@@ -129,6 +157,7 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
             process.exit(1);
           }
         });
+      };
 
       const onInterrupt = new Promise((_, reject) => {
         watcher.on('change', state => {
@@ -146,13 +175,11 @@ const createRunner = (runPath, { getExtraOptions } = {}) => {
         ),
       );
 
-      const cleanup = () => worker.end();
+      const cleanup = () => {
+        worker.end();
+      };
 
       return Promise.race([runAllTests, onInterrupt]).then(cleanup, cleanup);
     }
-  }
-
-  return BaseTestRunner;
-};
-
-export default createRunner;
+  };
+}

@@ -2,7 +2,7 @@
   "name": "create-jest-runner",
   "version": "0.8.0",
   "main": "build/index.js",
-  "types": "types/index.d.ts",
+  "types": "build/index.d.ts",
   "author": "Rogelio Guzman <rogelioguzmanh@gmail.com>",
   "contributors": [
     {
@@ -16,8 +16,7 @@
   "homepage": "https://github.com/jest-community/create-jest-runner",
   "files": [
     "build/",
-    "generator/",
-    "types/"
+    "generator/"
   ],
   "scripts": {
     "test": "jest --no-color",
@@ -25,8 +24,9 @@
     "prettier:run": "prettier '*.md' '.github/**' '*.json' '**/package.json' '.vscode/*.json' 'generator/fixtures/*'",
     "prettier:check": "yarn prettier:run --check",
     "prettier:write": "yarn prettier:run --write",
-    "watch": "babel lib -w --ignore '**/*.test.js,integration' -d build",
-    "build": "babel lib --ignore '**/*.test.js,integration' -d build",
+    "watch": "yarn build --watch",
+    "build": "babel lib --ignore '**/*.test.js,integration' --out-dir build --extensions '.ts'",
+    "build-types": "tsc",
     "prepare": "yarn build"
   },
   "dependencies": {
@@ -37,7 +37,9 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "babel-jest": "^27.0.6",

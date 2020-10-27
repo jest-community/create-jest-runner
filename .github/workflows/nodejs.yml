@@ -23,6 +23,8 @@ jobs:
         run: yarn
       - name: build
         run: yarn build
+      - name: build types
+        run: yarn build-types
       - name: run eslint
         run: yarn lint
       - name: run prettier
@@ -46,6 +48,8 @@ jobs:
         run: yarn
       - name: build
         run: yarn build
+      - name: build types
+        run: yarn build-types
       - name: run tests
         run: yarn test
         env:
@@ -68,6 +72,8 @@ jobs:
         run: yarn
       - name: build
         run: yarn build
+      - name: build types
+        run: yarn build-types
       - name: run tests
         run: yarn test
         env:
