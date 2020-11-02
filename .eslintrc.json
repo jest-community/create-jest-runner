@@ -5,10 +5,7 @@
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint"
   ],
-  "plugins": [
-    "prettier",
-    "jest"
-  ],
+  "plugins": ["prettier", "jest"],
   "rules": {
     "no-underscore-dangle": "off",
     "max-classes-per-file": "off",
