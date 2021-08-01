@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "jest-worker": "^26.3.0",
+    "jest-worker": "^27.0.6",
     "throat": "^6.0.1"
   },
   "devDependencies": {
