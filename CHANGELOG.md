@@ -1,5 +1,9 @@
 ## main
 
+## 0.7.1
+
+- Ship type definitions
+
 ## 0.7.0
 
 - Update dependencies and drop support for Node 8
