@@ -32,7 +32,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "jest-worker": "^26.3.0",
-    "throat": "^5.0.0"
+    "throat": "^6.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

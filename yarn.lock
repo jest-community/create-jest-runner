@@ -2743,7 +2743,7 @@ __metadata:
     jest-worker: ^26.3.0
     prettier: ^2.0.5
     strip-ansi: ^6.0.0
-    throat: ^5.0.0
+    throat: ^6.0.1
     typescript: ^4.0.5
   bin:
     create-jest-runner: ./generator/index.js
@@ -7135,6 +7135,13 @@ __metadata:
   version: 5.0.0
   resolution: "throat@npm:5.0.0"
   checksum: 2fa41c09ccd97982cd6601eca704913f5d8ef5cc4070fcd71c67e7240da7c0df86f65f5cb23f5c3132ab5567154740114cc92379663aa098b6076a39481b0f5f
+  languageName: node
+  linkType: hard
+
+"throat@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "throat@npm:6.0.1"
+  checksum: c984a40b4725bbd6e8c49d57b2bd36ab36c5534e8a1bed0d278d480171fdf908f16ba343d61c3e9c2e3ed4b327a59c28432cfa44594453b756ec219a772395a8
   languageName: node
   linkType: hard
 
