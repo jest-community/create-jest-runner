@@ -1,6 +1,6 @@
 # create-jest-runner
 
-[![Build Status](https://travis-ci.org/jest-community/create-jest-runner.svg?branch=master)](https://travis-ci.org/jest-community/create-jest-runner)
+[![Actions Status](https://github.com/jest-community/create-jest-runner/actions/workflows/nodejs.yml/badge.svg?branch=main)](https://github.com/jest-community/create-jest-runner/actions)
 
 A highly opinionated way for creating Jest Runners
 
