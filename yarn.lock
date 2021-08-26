@@ -2736,7 +2736,7 @@ __metadata:
     eslint-plugin-prettier: ^3.0.1
     execa: ^5.0.0
     jest: ^27.0.6
-    jest-worker: ^26.3.0
+    jest-worker: ^27.0.6
     prettier: ^2.0.5
     strip-ansi: ^6.0.0
     throat: ^6.0.1
@@ -4902,17 +4902,6 @@ __metadata:
     jest-util: ^27.0.6
     string-length: ^4.0.1
   checksum: 9042163b3a0860bb9b569c1a1cdc887f51f8676aafea273ae15615d8018bbaa0655d0f719fb93bd3fd60216ff24ed01978e04d6f576be969cca22b45b7fe5a27
-  languageName: node
-  linkType: hard
-
-"jest-worker@npm:^26.3.0":
-  version: 26.6.2
-  resolution: "jest-worker@npm:26.6.2"
-  dependencies:
-    "@types/node": "*"
-    merge-stream: ^2.0.0
-    supports-color: ^7.0.0
-  checksum: 5eb349833b5e9750ce8700388961dfd5d5e207c913122221e418e48b9cda3c17b0fb418f6a90f1614cfdc3ca836158b720c5dc1de82cb1e708266b4d76e31a38
   languageName: node
   linkType: hard
 
