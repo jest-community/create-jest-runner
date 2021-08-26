@@ -1,5 +1,7 @@
 ## main
 
+- Drop support for Node 15
+
 ## 0.7.1
 
 - Ship type definitions
