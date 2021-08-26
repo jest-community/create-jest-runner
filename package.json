@@ -47,7 +47,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "execa": "^4.0.3",
+    "execa": "^5.0.0",
     "jest": "^26.4.1",
     "prettier": "^2.0.5",
     "strip-ansi": "^6.0.0",
