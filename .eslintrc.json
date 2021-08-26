@@ -2,10 +2,9 @@
   "extends": [
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["prettier", "jest"],
+  "plugins": ["jest"],
   "rules": {
     "no-underscore-dangle": "off",
     "max-classes-per-file": "off",

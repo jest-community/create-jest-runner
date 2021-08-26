@@ -1,5 +1,4 @@
 const runJest = require('./runJest');
 
-it('Works when it has skipped tests', () => {
-  return expect(runJest('skipped')).resolves.toMatchSnapshot();
-});
+it('Works when it has skipped tests', () =>
+  expect(runJest('skipped')).resolves.toMatchSnapshot());
