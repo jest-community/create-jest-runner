@@ -1,5 +1,7 @@
 ## main
 
+## 0.8.0
+
 - Drop support for Node 15
 - Update `jest-worker` to v27
 
