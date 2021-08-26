@@ -1,6 +1,6 @@
 {
   "name": "create-jest-runner",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "build/index.js",
   "types": "types/index.d.ts",
   "author": "Rogelio Guzman <rogelioguzmanh@gmail.com>",
