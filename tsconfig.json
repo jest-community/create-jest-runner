@@ -25,6 +25,7 @@
     "moduleResolution": "node",
 
     /* Advanced Options */
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": ["./lib/"],
