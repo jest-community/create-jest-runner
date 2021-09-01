@@ -1,5 +1,9 @@
 ## main
 
+## 0.9.0
+
+- Migrate source code to TypeScript (should not affect consumers, but marking as new minor just in case)
+
 ## 0.8.0
 
 - Drop support for Node 15
