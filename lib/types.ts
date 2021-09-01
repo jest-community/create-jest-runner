@@ -39,22 +39,4 @@ export declare abstract class TestRunner {
     onFailure: JestRunner.OnTestFailure,
     options: JestRunner.TestRunnerOptions,
   ): Promise<void>;
-
-  _createInBandTestRun(
-    tests: Array<JestRunner.Test>,
-    watcher: JestRunner.TestWatcher,
-    onStart: JestRunner.OnTestStart,
-    onResult: JestRunner.OnTestSuccess,
-    onFailure: JestRunner.OnTestFailure,
-    options: JestRunner.TestRunnerOptions,
-  ): Promise<void>;
-
-  _createParallelTestRun(
-    tests: Array<JestRunner.Test>,
-    watcher: JestRunner.TestWatcher,
-    onStart: JestRunner.OnTestStart,
-    onResult: JestRunner.OnTestSuccess,
-    onFailure: JestRunner.OnTestFailure,
-    options: JestRunner.TestRunnerOptions,
-  ): Promise<void>;
 }

@@ -19,17 +19,10 @@ export default function createRunner<
   { getExtraOptions }: CreateRunnerOptions<ExtraOptionsType> = {},
 ): typeof TestRunner {
   return class BaseTestRunner implements TestRunner {
-    readonly _globalConfig: Config.GlobalConfig;
-
-    readonly _context: JestRunner.TestRunnerContext;
-
     constructor(
-      globalConfig: Config.GlobalConfig,
-      context?: JestRunner.TestRunnerContext,
-    ) {
-      this._globalConfig = globalConfig;
-      this._context = context || {};
-    }
+      public readonly _globalConfig: Config.GlobalConfig,
+      public readonly _context: JestRunner.TestRunnerContext = {},
+    ) {}
 
     runTests(
       tests: Array<JestRunner.Test>,
