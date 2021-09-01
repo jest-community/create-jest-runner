@@ -7,6 +7,12 @@
           "node": "10"
         }
       }
+    ],
+    [
+      "@babel/preset-typescript",
+      {
+        "allowDeclareFields": true
+      }
     ]
   ]
 }

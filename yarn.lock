@@ -124,7 +124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.14.5":
+"@babel/helper-create-class-features-plugin@npm:^7.14.5, @babel/helper-create-class-features-plugin@npm:^7.15.0":
   version: 7.15.0
   resolution: "@babel/helper-create-class-features-plugin@npm:7.15.0"
   dependencies:
@@ -742,7 +742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-typescript@npm:^7.7.2":
+"@babel/plugin-syntax-typescript@npm:^7.14.5, @babel/plugin-syntax-typescript@npm:^7.7.2":
   version: 7.14.5
   resolution: "@babel/plugin-syntax-typescript@npm:7.14.5"
   dependencies:
@@ -1106,6 +1106,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-transform-typescript@npm:^7.15.0":
+  version: 7.15.0
+  resolution: "@babel/plugin-transform-typescript@npm:7.15.0"
+  dependencies:
+    "@babel/helper-create-class-features-plugin": ^7.15.0
+    "@babel/helper-plugin-utils": ^7.14.5
+    "@babel/plugin-syntax-typescript": ^7.14.5
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: c550eb8f04030086c6aec2f4bb2389ef17f440cf3ebfbc479a5b261e2fdd4a4761b67a15b1810619b70a3bf56f4896f2e8688c4fe69b2a967f8f66d7294c75cf
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-transform-unicode-escapes@npm:^7.14.5":
   version: 7.14.5
   resolution: "@babel/plugin-transform-unicode-escapes@npm:7.14.5"
@@ -1224,6 +1237,19 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 8a463709fd9db195c73ad1d6ff2d85ce92976167f20ded23ec49b47754c42fae40f93ff3287fb2e980f0d7f0b7ddf163aa92faf416ef422bdccf722bdae50138
+  languageName: node
+  linkType: hard
+
+"@babel/preset-typescript@npm:^7.0.0":
+  version: 7.15.0
+  resolution: "@babel/preset-typescript@npm:7.15.0"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.14.5
+    "@babel/helper-validator-option": ^7.14.5
+    "@babel/plugin-transform-typescript": ^7.15.0
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: c5459aefeb191d189f06670ebabcb561d9f1f1f59fdcb378901802cd4205b6f11026e81767c799d717848af7e19511d87f7336c49d06c9a0b593b9a9f0304d07
   languageName: node
   linkType: hard
 
@@ -1707,10 +1733,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 16.7.2
-  resolution: "@types/node@npm:16.7.2"
-  checksum: 5fde3f4f4c215ef81277571b695157072a5060d52afd21c4ddb01a0268422e98c53fecf5a99a2b707de93c5a5dc8a78d6425abffa211c656ee5ae0718a536ebb
+"@types/node@npm:*, @types/node@npm:^14.17.12":
+  version: 14.17.12
+  resolution: "@types/node@npm:14.17.12"
+  checksum: 5fdad55934317c1cbaadbb57cf32e56bdda9f25bc3a3e3fef38579e2e4b96c15272918ec7631c26b8980756c57c4b29457ef33f10271a93843868ca01208e40e
   languageName: node
   linkType: hard
 
@@ -2724,6 +2750,10 @@ __metadata:
     "@babel/cli": ^7.0.0
     "@babel/core": ^7.0.0
     "@babel/preset-env": ^7.0.0
+    "@babel/preset-typescript": ^7.0.0
+    "@jest/test-result": ^27.0.6
+    "@jest/types": ^27.0.6
+    "@types/node": ^14.17.12
     "@typescript-eslint/eslint-plugin": ^4.6.0
     "@typescript-eslint/parser": ^4.6.0
     babel-jest: ^27.0.6
@@ -2736,11 +2766,23 @@ __metadata:
     eslint-plugin-prettier: ^3.0.1
     execa: ^5.0.0
     jest: ^27.0.6
+    jest-runner: ^27.0.6
     jest-worker: ^27.0.6
     prettier: ^2.0.5
     strip-ansi: ^6.0.0
     throat: ^6.0.1
     typescript: ~4.3.5
+  peerDependencies:
+    "@jest/test-result": ^27.0.0
+    "@jest/types": ^27.0.0
+    jest-runner: ^27.0.0
+  peerDependenciesMeta:
+    "@jest/test-result":
+      optional: true
+    "@jest/types":
+      optional: true
+    jest-runner:
+      optional: true
   bin:
     create-jest-runner: ./generator/index.js
   languageName: unknown
