@@ -1745,10 +1745,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.17.12":
-  version: 14.17.21
-  resolution: "@types/node@npm:14.17.21"
-  checksum: 5cc0e83e4ec75a0a7fb1a9299037dfe7ff7e4f45746de364d2027b3af36fbd470e0ca4d831b0fa129aa2b70e60ad1471a5ff4949c80b7029b1ea8873122a4aa5
+"@types/node@npm:^16.11.4":
+  version: 16.11.4
+  resolution: "@types/node@npm:16.11.4"
+  checksum: 4182611dd4ae8d32a2f9c6a680f5c8ce0897cbe93fbc74a1351fe1507bd5e5dc53d323c2539cc06b98892486a2485a937a5ca1d106cc2d482f0ee22f8a72f146
   languageName: node
   linkType: hard
 
@@ -2606,7 +2606,7 @@ __metadata:
     "@babel/preset-typescript": ^7.0.0
     "@jest/test-result": ^27.0.6
     "@jest/types": ^27.0.6
-    "@types/node": ^14.17.12
+    "@types/node": ^16.11.4
     "@typescript-eslint/eslint-plugin": ^4.6.0
     "@typescript-eslint/parser": ^4.6.0
     babel-jest: ^27.0.6
