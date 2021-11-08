@@ -357,22 +357,22 @@ __metadata:
   linkType: hard
 
 "@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.16.0, @babel/parser@npm:^7.7.2":
-  version: 7.16.0
-  resolution: "@babel/parser@npm:7.16.0"
+  version: 7.16.2
+  resolution: "@babel/parser@npm:7.16.2"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: bdeeb1d9134e2c2d0354d8d16e0480025c59ca86b856279200e0adc7860b2d44bad505b2312038685ead08afc567c5803135956f4f79186c41e60ac26f60e2fe
+  checksum: 06a8f0d812d10a57353cf75a417409c846d8a21773e690bf8a201e26c45fc826051ea6e39901e203c251d23ae886b6d2d24b40f0b1729a9fcbf9c4e351714599
   languageName: node
   linkType: hard
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:^7.16.0":
-  version: 7.16.0
-  resolution: "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:7.16.0"
+  version: 7.16.2
+  resolution: "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:7.16.2"
   dependencies:
     "@babel/helper-plugin-utils": ^7.14.5
   peerDependencies:
     "@babel/core": ^7.0.0
-  checksum: fcd94f69346750b8d42e2b045b4096d0c1f99575525472015b093add4f1f3b686710051860c1596fc5848641bb603cf56527ef24e6b9a59ca318c268185f6fad
+  checksum: 300e9c1561b680e4e6e14da1ee70df6ec41b51e25aea78843d0c735a429c85821344c256683baa4e262a3a5ca7ee67ec7e746d445f92faea1af11ae9c0e47ea6
   languageName: node
   linkType: hard
 
@@ -1355,9 +1355,9 @@ __metadata:
   linkType: hard
 
 "@humanwhocodes/object-schema@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@humanwhocodes/object-schema@npm:1.2.0"
-  checksum: ef533ee0d227b8036e4220013575fedc3d0346e2e40bc5f5536ba5761825f23577eb4b71e52f18a2d3b827c9d83cfa60c821a71e30d5f6537918a94bc1990963
+  version: 1.2.1
+  resolution: "@humanwhocodes/object-schema@npm:1.2.1"
+  checksum: 5fc0c8672c9f0a3fcb9f71004e386fbbe6ff443309dfebfdbae4646536a416ed7d11fd2ce34be2b90dc4033e75922f4b4cde2f387a389d0462b1eb6034342c16
   languageName: node
   linkType: hard
 
@@ -1646,11 +1646,11 @@ __metadata:
   linkType: hard
 
 "@sinonjs/fake-timers@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "@sinonjs/fake-timers@npm:8.0.1"
+  version: 8.1.0
+  resolution: "@sinonjs/fake-timers@npm:8.1.0"
   dependencies:
     "@sinonjs/commons": ^1.7.0
-  checksum: f9f73504278c94ab9337d36e9f594082451f55fa7824e8fcd650354aaa0427c3bfb4ea26ff9afdb10e0d3c48da46452d0754bc0248aeb987584d47af63115e3d
+  checksum: 3390628056e527ec37e0ce4d9f197c2391fef0c8aa208dff832cc8f3e30cfebe1440645fe3bc05ad787efe577323023b6025b60443269d9baf67f4346d73e4f2
   languageName: node
   linkType: hard
 
@@ -2297,18 +2297,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.16.6, browserslist@npm:^4.17.5":
-  version: 4.17.5
-  resolution: "browserslist@npm:4.17.5"
+"browserslist@npm:^4.16.6, browserslist@npm:^4.17.6":
+  version: 4.17.6
+  resolution: "browserslist@npm:4.17.6"
   dependencies:
-    caniuse-lite: ^1.0.30001271
-    electron-to-chromium: ^1.3.878
+    caniuse-lite: ^1.0.30001274
+    electron-to-chromium: ^1.3.886
     escalade: ^3.1.1
     node-releases: ^2.0.1
     picocolors: ^1.0.0
   bin:
     browserslist: cli.js
-  checksum: 857b6b17195e8621c4defe3a567e44b93455dde6d4b0cd38483e41a86b50c6a151c2c536f438bb28a53e947557432099b2313ce923fca0234beab9acdc61518d
+  checksum: b23449e7fcf434515a4fc01890ee907f95457b87bf99fa9c57ca4184a2bab591416054b4e135fe7a4abc9d290d7324897b550121e10824af58d560dca0a5555b
   languageName: node
   linkType: hard
 
@@ -2385,10 +2385,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001271":
-  version: 1.0.30001274
-  resolution: "caniuse-lite@npm:1.0.30001274"
-  checksum: 3744101a8487beedf116eb563b0e9b634c75d8cee177aa5b1808c863ac39c0db5c2e4a9c7ca28eb14cb721be1ef4779355412a3bd6cd3f74aa3b50e1fadf4a3c
+"caniuse-lite@npm:^1.0.30001274":
+  version: 1.0.30001278
+  resolution: "caniuse-lite@npm:1.0.30001278"
+  checksum: 2f4fb8165e9feb70e764726c567841b3dc8c25ec8418e1c84335b566f61b6220e74039b706cc274c492e51a72da9140bb81c1d63bc7873552e89e8281abf714a
   languageName: node
   linkType: hard
 
@@ -2578,12 +2578,12 @@ __metadata:
   linkType: hard
 
 "core-js-compat@npm:^3.18.0, core-js-compat@npm:^3.19.0":
-  version: 3.19.0
-  resolution: "core-js-compat@npm:3.19.0"
+  version: 3.19.1
+  resolution: "core-js-compat@npm:3.19.1"
   dependencies:
-    browserslist: ^4.17.5
+    browserslist: ^4.17.6
     semver: 7.0.0
-  checksum: 973184c6256b70633729f9b8729c49b057617ba13573eaba3c9e6e26aa33353b5372fc35fb8c331a2eca85b3f2344ed984c72b8cbd2d5b0364c8b1da64e7c5d8
+  checksum: bffca24f340573c05e077cd6645b41b5c187df2892957cbfe12f369e1d87c36f6bbb89fddcc8216a792adb1c0f1fdbe1b751f28f9eb39571cb29c2e56a3634fb
   languageName: node
   linkType: hard
 
@@ -2822,10 +2822,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-to-chromium@npm:^1.3.878":
-  version: 1.3.885
-  resolution: "electron-to-chromium@npm:1.3.885"
-  checksum: 5609c2b595e9ce0bd9e66d338f5f964e0ddd54eb1b94851cb262789f661738fd26cfbc9fd2bb122391085af5dfe25e62d862fdf0c44754766ee928a74a5a0999
+"electron-to-chromium@npm:^1.3.886":
+  version: 1.3.890
+  resolution: "electron-to-chromium@npm:1.3.890"
+  checksum: 7bc5e1e4de195cf62c2263edf89b02aa4de6363f6db6c997ff1971ab46f6bf83ab3149a10c5699e87e2a8fe529b8e5a32e15d6e07593e0a7fae4c5f26cf1b6c0
   languageName: node
   linkType: hard
 
@@ -3695,9 +3695,9 @@ __metadata:
   linkType: hard
 
 "ignore@npm:^5.1.4, ignore@npm:^5.1.8":
-  version: 5.1.8
-  resolution: "ignore@npm:5.1.8"
-  checksum: b08e3d5b5d94eca13475f29a5d47d221060e9cdd7e38d7647088e29d90130669a970fecbc4cdb41b8fa295c6673740c729d3dc05dadc381f593efb42282cbf9f
+  version: 5.1.9
+  resolution: "ignore@npm:5.1.9"
+  checksum: c7866dd309c768ab9c57fea0f0e05d8b5f585a1c7c0c09621bd9b8770ac4ee6e4b6615043341f8635c1a733f4e1e3a0f9e8c987a40743d0bae742f11e1477378
   languageName: node
   linkType: hard
 
@@ -4711,13 +4711,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.clonedeep@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.clonedeep@npm:4.5.0"
-  checksum: 41e2fe4c57c56a66a4775a6ddeebe9272f0ce4d257d97b3cb8724a9b01eeec9b09ce7e8603d6926baf5f48c287d988f0de4bf5aa244ea86b1f22c1e6f203cc27
-  languageName: node
-  linkType: hard
-
 "lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
@@ -4985,8 +4978,8 @@ __metadata:
   linkType: hard
 
 "node-gyp@npm:latest":
-  version: 8.3.0
-  resolution: "node-gyp@npm:8.3.0"
+  version: 8.4.0
+  resolution: "node-gyp@npm:8.4.0"
   dependencies:
     env-paths: ^2.2.0
     glob: ^7.1.4
@@ -5000,7 +4993,7 @@ __metadata:
     which: ^2.0.2
   bin:
     node-gyp: bin/node-gyp.js
-  checksum: b79f8b8b40f37d6799561b2f737cc86b4e1f049cbcb90d93aeb2192268b482034dfc20f3eb66a62bdf74bd021ef9e646156f649583d0db0c2887953462668638
+  checksum: 15a50dc6a4d2f6e3afbcef0e51b7a973911a6ba52e5668ea4d03dc258b3e47f05a867a4f49d11b0a2d31cc8478efa62d3dfe3c26ae563a9d091c29aeba4f57d2
   languageName: node
   linkType: hard
 
@@ -6020,16 +6013,15 @@ __metadata:
   linkType: hard
 
 "table@npm:^6.0.9":
-  version: 6.7.2
-  resolution: "table@npm:6.7.2"
+  version: 6.7.3
+  resolution: "table@npm:6.7.3"
   dependencies:
     ajv: ^8.0.1
-    lodash.clonedeep: ^4.5.0
     lodash.truncate: ^4.4.2
     slice-ansi: ^4.0.0
     string-width: ^4.2.3
     strip-ansi: ^6.0.1
-  checksum: 64f33994f3c3d424fcbca2435014429034bf6848ed77a258702685eb3e50f4366d122cf7b375d616c1a7e1789c3bb2c0159e0b1fa9a12c68736fad2e213d6c66
+  checksum: b797c31cd74e791cf32ae93db7b6bdb10530fe8cd8c5819c5c6291366e162b52f13c6669331ff1f0453517210615954c842ac058b187a7f8247c6f2a252e3aee
   languageName: node
   linkType: hard
 
