@@ -25,8 +25,6 @@ function getPerfStats({ stats }: Options): TestResult['perfStats'] {
   const start = new Date(stats.start).getTime();
   const end = new Date(stats.end).getTime();
   const runtime = end - start;
-  // TODO: determine `slow` by using `runtime / 1000 > config.slowTestThreshold`
-  // See: https://github.com/facebook/jest/blob/acd7c83c8365140f4ecf44a456ff7366ffa31fa2/packages/jest-runner/src/runTest.ts#L287
   const slow = false;
   return { start, end, runtime, slow };
 }
