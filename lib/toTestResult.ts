@@ -25,6 +25,7 @@ function getPerfStats({ stats }: Options): TestResult['perfStats'] {
   const start = new Date(stats.start).getTime();
   const end = new Date(stats.end).getTime();
   const runtime = end - start;
+  // Note: this flag is set in 'lib/createJestRunner.ts'
   const slow = false;
   return { start, end, runtime, slow };
 }
