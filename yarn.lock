@@ -2379,9 +2379,9 @@ __metadata:
   linkType: hard
 
 "camelcase@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "camelcase@npm:6.2.0"
-  checksum: 654700600a80cb1f06ab85b3e2fe80333f94b441884d40826becdac549774f51b0317c6dcb6040416df26241fa9481eb58d0c1659d4d6d5627dcd4259be61beb
+  version: 6.2.1
+  resolution: "camelcase@npm:6.2.1"
+  checksum: d4ffec66fc66a6b2de0e6d1727402fc6e6a68d82ff27c0a29083ce0abfaa475560a5b7f2d5d94f47eb5bc1e0e1deedac41ca98a81760e8ebd790bcbddefd3a3d
   languageName: node
   linkType: hard
 
