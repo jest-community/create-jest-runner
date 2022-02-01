@@ -1,4 +1,3 @@
-import type * as JestResult from '@jest/test-result';
 import type { Config } from '@jest/types';
 import type * as JestRunner from 'jest-runner';
 import { Worker } from 'jest-worker';
