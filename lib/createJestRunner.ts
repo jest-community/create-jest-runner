@@ -1,4 +1,3 @@
-import type * as JestResult from '@jest/test-result';
 import type { Config } from '@jest/types';
 import type * as JestRunner from 'jest-runner';
 import { Worker } from 'jest-worker';
@@ -136,22 +135,6 @@ export default function createRunner<
           });
         });
 
-      const onError = (
-        err: JestResult.SerializableError,
-        test: JestRunner.Test,
-      ) => {
-        return onFailure(test, err).then(() => {
-          if (err.type === 'ProcessTerminatedError') {
-            // eslint-disable-next-line no-console
-            console.error(
-              'A worker process has quit unexpectedly! ' +
-                'Most likely this is an initialization error.',
-            );
-            process.exit(1);
-          }
-        });
-      };
-
       const onInterrupt = new Promise((_, reject) => {
         watcher.on('change', state => {
           if (state.interrupted) {
@@ -164,7 +147,7 @@ export default function createRunner<
         tests.map(test =>
           runTestInWorker(test)
             .then(testResult => onResult(test, testResult))
-            .catch(error => onError(error, test)),
+            .catch(error => onFailure(test, error)),
         ),
       );
 
