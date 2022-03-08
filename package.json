@@ -42,15 +42,15 @@
     "@jest/test-result": "^27.0.6",
     "@jest/types": "^27.0.6",
     "@types/node": "^16.11.4",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
     "babel-jest": "^27.0.6",
-    "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jest": "^24.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "execa": "^5.0.0",
     "jest": "^27.0.6",
     "jest-runner": "^27.0.6",
@@ -79,5 +79,6 @@
     "arrowParens": "avoid",
     "singleQuote": true,
     "trailingComma": "all"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }

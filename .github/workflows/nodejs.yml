@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 'lts/*'
           cache: yarn
       - name: install
         run: yarn
@@ -34,13 +34,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x]
+        node-version: [12.x, 14.x, 16.x, 17.x]
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
@@ -52,8 +52,6 @@ jobs:
         run: yarn build-types
       - name: run tests
         run: yarn test
-        env:
-          CI: true
   test-os:
     name: Test on ${{ matrix.os }} using Node.js LTS
     strategy:
@@ -63,10 +61,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 'lts/*'
           cache: yarn
       - name: install
         run: yarn
@@ -76,5 +74,3 @@ jobs:
         run: yarn build-types
       - name: run tests
         run: yarn test
-        env:
-          CI: true
