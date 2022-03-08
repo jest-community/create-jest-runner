@@ -1,13 +1,14 @@
 import type { Config } from '@jest/types';
+import type { TestResult } from '@jest/test-result';
 import type * as JestRunner from 'jest-runner';
 import { Worker } from 'jest-worker';
 import throat from 'throat';
 import type { CreateRunnerOptions, Path, TestRunner } from './types';
 
 function determineSlowTestResult(
-  test: JestResult.Test,
-  result: JestResult.TestResult,
-): JestResult.TestResult {
+  test: JestRunner.Test,
+  result: TestResult,
+): TestResult {
   // See: https://github.com/facebook/jest/blob/acd7c83c8365140f4ecf44a456ff7366ffa31fa2/packages/jest-runner/src/runTest.ts#L287
   if (result.perfStats.runtime / 1000 > test.context.config.slowTestThreshold) {
     return { ...result, perfStats: { ...result.perfStats, slow: true } };
