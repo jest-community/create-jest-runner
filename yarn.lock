@@ -1714,6 +1714,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsconfig/node12@npm:^1.0.9":
+  version: 1.0.9
+  resolution: "@tsconfig/node12@npm:1.0.9"
+  checksum: a01b2400ab3582b86b589c6d31dcd0c0656f333adecde85d6d7d4086adb059808b82692380bb169546d189bf771ae21d02544a75b57bd6da4a5dd95f8567bec9
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14":
   version: 7.1.19
   resolution: "@types/babel__core@npm:7.1.19"
@@ -2660,6 +2667,7 @@ __metadata:
     "@babel/preset-typescript": ^7.0.0
     "@jest/test-result": ^27.0.6
     "@jest/types": ^27.0.6
+    "@tsconfig/node12": ^1.0.9
     "@types/node": ^16.11.4
     "@typescript-eslint/eslint-plugin": ^5.14.0
     "@typescript-eslint/parser": ^5.14.0

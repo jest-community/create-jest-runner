@@ -1,9 +1,7 @@
 {
+  "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
     /* Basic Options */
-    "target": "ES5",
-    "module": "CommonJS",
-    "lib": ["ES2018"],
     // "allowJs": true,
     // "checkJs": true,
     "declaration": true,
@@ -13,8 +11,8 @@
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
 
-    /* Strict Type-Checking Options */
-    "strict": true,
+    "esModuleInterop": false,
+    "skipLibCheck": false,
 
     /* Additional Checks */
     "noUnusedLocals": true,
