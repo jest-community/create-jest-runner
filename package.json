@@ -18,7 +18,6 @@
     "build/",
     "generator/"
   ],
-  "types": "build/index.d.ts",
   "scripts": {
     "test": "jest --no-color",
     "lint": "eslint .",
