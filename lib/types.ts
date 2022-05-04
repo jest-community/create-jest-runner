@@ -22,7 +22,7 @@ export type RunTest<
   ExtraOptions extends Record<string, unknown> = Record<string, unknown>,
 > = (
   options: RunTestOptions<ExtraOptions>,
-) => TestResult | Error | Promise<TestResult | Error>;
+) => TestResult | Promise<TestResult>;
 
 export interface TestDetail {
   title: string;
