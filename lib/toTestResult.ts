@@ -1,5 +1,4 @@
 import type { TestResult } from '@jest/test-result';
-import type { Milliseconds } from './types';
 
 interface Options {
   stats: {
@@ -13,7 +12,7 @@ interface Options {
   skipped: boolean;
   errorMessage?: string | null;
   tests: Array<{
-    duration?: Milliseconds | null;
+    duration?: number | null;
     errorMessage?: string;
     testPath?: string;
     title?: string;
