@@ -1,42 +1,28 @@
-// Common type aliases for better code readability
+import type { TestContext, TestResult } from '@jest/test-result';
+import type { Config, TestRunnerOptions } from 'jest-runner';
 
-import type {
-  Config as JestConfig,
-  TestResult as JestTestResult,
-} from '@jest/types';
-import type * as JestRunner from 'jest-runner';
+export interface CreateRunnerOptions<
+  ExtraOptions extends Record<string, unknown>,
+> {
+  getExtraOptions?: () => ExtraOptions;
+}
 
-export type Milliseconds = JestTestResult.Milliseconds;
-export type Path = JestConfig.Path;
+export type RunTestOptions<
+  ExtraOptions extends Record<string, unknown> = Record<string, unknown>,
+> = {
+  config: Config.ProjectConfig;
+  extraOptions: ExtraOptions;
+  globalConfig: Config.GlobalConfig;
+  rawModuleMap: ReturnType<TestContext['moduleMap']['getRawModuleMap']> | null;
+  options: TestRunnerOptions;
+  testPath: string;
+};
+
+export type RunTest<
+  ExtraOptions extends Record<string, unknown> = Record<string, unknown>,
+> = (options: RunTestOptions<ExtraOptions>) => TestResult | Promise<TestResult>;
 
 export interface TestDetail {
   title: string;
-  path: Path;
-}
-
-export interface CreateRunnerOptions<
-  ExtraOptionsType extends Record<string, unknown>,
-> {
-  getExtraOptions?: () => ExtraOptionsType;
-}
-
-// Copied and adapted from https://github.com/facebook/jest/blob/2dafb09d51584d3785f3280f569784ec4334b5d8/packages/jest-runner/src/index.ts#L48-L285
-export declare abstract class TestRunner {
-  readonly _globalConfig: JestConfig.GlobalConfig;
-
-  readonly _context: JestRunner.TestRunnerContext;
-
-  constructor(
-    globalConfig: JestConfig.GlobalConfig,
-    context?: JestRunner.TestRunnerContext,
-  );
-
-  runTests(
-    tests: Array<JestRunner.Test>,
-    watcher: JestRunner.TestWatcher,
-    onStart: JestRunner.OnTestStart,
-    onResult: JestRunner.OnTestSuccess,
-    onFailure: JestRunner.OnTestFailure,
-    options: JestRunner.TestRunnerOptions,
-  ): Promise<void>;
+  path: string;
 }

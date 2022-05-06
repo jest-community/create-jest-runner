@@ -71,7 +71,8 @@ module.exports = createJestRunner(require.resolve('./run'));
 const fs = require('fs');
 const { pass, fail } = require('create-jest-runner');
 
-module.exports = ({ testPath }) => {
+/** @type {import('create-jest-runner').RunTest} */
+const runTest = ({ testPath }) => {
   const start = Date.now();
   const contents = fs.readFileSync(testPath, 'utf8');
   const end = Date.now();
@@ -86,6 +87,8 @@ module.exports = ({ testPath }) => {
     test: { path: testPath, errorMessage, title: 'Check for ⚔️ 🏃' },
   });
 };
+
+module.exports = runTest;
 ```
 
 ## Create runner from binary
@@ -97,8 +100,7 @@ yarn create jest-runner my-runner
 npm init jest-runner my-runner
 ```
 
-**Note:** You will have to update the package name in `package.json` of the
-generated runner
+**Note:** You will have to update the package name in `package.json` of the generated runner.
 
 ## Add your runner to Jest config
 

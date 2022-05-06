@@ -3,3 +3,5 @@ export { default as fail } from './fail';
 export { default as pass } from './pass';
 export { default as skip } from './skip';
 export { default as todo } from './todo';
+
+export type { RunTest, RunTestOptions } from './types';

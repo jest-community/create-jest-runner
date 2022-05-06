@@ -1,14 +1,18 @@
-import type { Config } from '@jest/types';
 import type { TestResult } from '@jest/test-result';
-import type * as JestRunner from 'jest-runner';
-import { Worker } from 'jest-worker';
+import {
+  CallbackTestRunner,
+  OnTestFailure,
+  OnTestStart,
+  OnTestSuccess,
+  Test,
+  TestRunnerOptions,
+  TestWatcher,
+} from 'jest-runner';
+import { Worker, JestWorkerFarm } from 'jest-worker';
 import throat from 'throat';
-import type { CreateRunnerOptions, Path, TestRunner } from './types';
+import type { CreateRunnerOptions, RunTestOptions } from './types';
 
-function determineSlowTestResult(
-  test: JestRunner.Test,
-  result: TestResult,
-): TestResult {
+function determineSlowTestResult(test: Test, result: TestResult): TestResult {
   // See: https://github.com/facebook/jest/blob/acd7c83c8365140f4ecf44a456ff7366ffa31fa2/packages/jest-runner/src/runTest.ts#L287
   if (result.perfStats.runtime / 1000 > test.context.config.slowTestThreshold) {
     return { ...result, perfStats: { ...result.perfStats, slow: true } };
@@ -24,24 +28,19 @@ class CancelRun extends Error {
 }
 
 export default function createRunner<
-  ExtraOptionsType extends Record<string, unknown>,
+  ExtraOptions extends Record<string, unknown>,
 >(
-  runPath: Path,
-  { getExtraOptions }: CreateRunnerOptions<ExtraOptionsType> = {},
-): typeof TestRunner {
-  return class BaseTestRunner implements TestRunner {
-    constructor(
-      public readonly _globalConfig: Config.GlobalConfig,
-      public readonly _context: JestRunner.TestRunnerContext = {},
-    ) {}
-
+  runPath: string,
+  { getExtraOptions }: CreateRunnerOptions<ExtraOptions> = {},
+): typeof CallbackTestRunner {
+  return class BaseTestRunner extends CallbackTestRunner {
     runTests(
-      tests: Array<JestRunner.Test>,
-      watcher: JestRunner.TestWatcher,
-      onStart: JestRunner.OnTestStart,
-      onResult: JestRunner.OnTestSuccess,
-      onFailure: JestRunner.OnTestFailure,
-      options: JestRunner.TestRunnerOptions,
+      tests: Array<Test>,
+      watcher: TestWatcher,
+      onStart: OnTestStart,
+      onResult: OnTestSuccess,
+      onFailure: OnTestFailure,
+      options: TestRunnerOptions,
     ): Promise<void> {
       return options.serial
         ? this._createInBandTestRun(
@@ -63,12 +62,12 @@ export default function createRunner<
     }
 
     _createInBandTestRun(
-      tests: Array<JestRunner.Test>,
-      watcher: JestRunner.TestWatcher,
-      onStart: JestRunner.OnTestStart,
-      onResult: JestRunner.OnTestSuccess,
-      onFailure: JestRunner.OnTestFailure,
-      options: JestRunner.TestRunnerOptions,
+      tests: Array<Test>,
+      watcher: TestWatcher,
+      onStart: OnTestStart,
+      onResult: OnTestSuccess,
+      onFailure: OnTestFailure,
+      options: TestRunnerOptions,
     ): Promise<void> {
       const mutex = throat(1);
       return tests.reduce(
@@ -110,29 +109,31 @@ export default function createRunner<
     }
 
     _createParallelTestRun(
-      tests: Array<JestRunner.Test>,
-      watcher: JestRunner.TestWatcher,
-      onStart: JestRunner.OnTestStart,
-      onResult: JestRunner.OnTestSuccess,
-      onFailure: JestRunner.OnTestFailure,
-      options: JestRunner.TestRunnerOptions,
+      tests: Array<Test>,
+      watcher: TestWatcher,
+      onStart: OnTestStart,
+      onResult: OnTestSuccess,
+      onFailure: OnTestFailure,
+      options: TestRunnerOptions,
     ): Promise<void> {
       const worker = new Worker(runPath, {
         exposedMethods: ['default'],
         numWorkers: this._globalConfig.maxWorkers,
         forkOptions: { stdio: 'inherit' },
-      });
+      }) as JestWorkerFarm<{
+        default: (runTestOptions: RunTestOptions) => TestResult;
+      }>;
 
       const mutex = throat(this._globalConfig.maxWorkers);
 
-      const runTestInWorker = (test: JestRunner.Test) =>
+      const runTestInWorker = (test: Test) =>
         mutex(() => {
           if (watcher.isInterrupted()) {
             throw new CancelRun();
           }
 
           return onStart(test).then(() => {
-            const baseOptions = {
+            const runTestOptions: RunTestOptions = {
               config: test.context.config,
               globalConfig: this._globalConfig,
               testPath: test.path,
@@ -143,8 +144,7 @@ export default function createRunner<
               extraOptions: getExtraOptions ? getExtraOptions() : {},
             };
 
-            // @ts-expect-error -- the required module should have a default export
-            return worker.default(baseOptions);
+            return worker.default(runTestOptions);
           });
         });
 

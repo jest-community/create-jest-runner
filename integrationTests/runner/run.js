@@ -2,9 +2,10 @@ const fs = require('fs');
 // eslint-disable-next-line import/extensions, import/no-unresolved -- ignore build artifact
 const { pass, fail, skip, todo } = require('../..');
 
-module.exports = ({ testPath }) => {
+/** @type {import('../..').RunTest} */
+const runTest = ({ testPath }) => {
   const start = Date.now();
-  // we don't want the timestamp in teh reporter result for our snapshots
+  // we don't want the timestamp in the reporter result for our snapshots
   const end = start;
   const contents = fs.readFileSync(testPath, 'utf8');
 
@@ -24,3 +25,5 @@ module.exports = ({ testPath }) => {
     test: { path: testPath, errorMessage, title: 'Check for ⚔️ 🏃' },
   });
 };
+
+module.exports = runTest;
