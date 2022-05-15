@@ -27,7 +27,7 @@
     "watch": "yarn build --watch",
     "build": "babel lib --ignore '**/*.test.js,integration' --out-dir build --extensions '.ts'",
     "build-types": "tsc",
-    "prepare": "yarn build"
+    "prepare": "yarn build && yarn build-types"
   },
   "dependencies": {
     "chalk": "^4.1.0",
