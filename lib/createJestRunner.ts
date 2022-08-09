@@ -1,6 +1,7 @@
 import type { TestResult } from '@jest/test-result';
-import {
-  CallbackTestRunner,
+import type {
+  CallbackTestRunnerInterface,
+  Config,
   OnTestFailure,
   OnTestStart,
   OnTestSuccess,
@@ -32,8 +33,14 @@ export default function createRunner<
 >(
   runPath: string,
   { getExtraOptions }: CreateRunnerOptions<ExtraOptions> = {},
-): typeof CallbackTestRunner {
-  return class BaseTestRunner extends CallbackTestRunner {
+) {
+  return class BaseTestRunner implements CallbackTestRunnerInterface {
+    #globalConfig: Config.GlobalConfig;
+
+    constructor(globalConfig: Config.GlobalConfig) {
+      this.#globalConfig = globalConfig;
+    }
+
     runTests(
       tests: Array<Test>,
       watcher: TestWatcher,
@@ -84,7 +91,7 @@ export default function createRunner<
                   const runner = require(runPath);
                   const baseOptions = {
                     config: test.context.config,
-                    globalConfig: this._globalConfig,
+                    globalConfig: this.#globalConfig,
                     testPath: test.path,
                     rawModuleMap: watcher.isWatchMode()
                       ? test.context.moduleMap.getRawModuleMap()
@@ -118,13 +125,13 @@ export default function createRunner<
     ): Promise<void> {
       const worker = new Worker(runPath, {
         exposedMethods: ['default'],
-        numWorkers: this._globalConfig.maxWorkers,
+        numWorkers: this.#globalConfig.maxWorkers,
         forkOptions: { stdio: 'inherit' },
       }) as JestWorkerFarm<{
         default: (runTestOptions: RunTestOptions) => TestResult;
       }>;
 
-      const mutex = throat(this._globalConfig.maxWorkers);
+      const mutex = throat(this.#globalConfig.maxWorkers);
 
       const runTestInWorker = (test: Test) =>
         mutex(() => {
@@ -135,7 +142,7 @@ export default function createRunner<
           return onStart(test).then(() => {
             const runTestOptions: RunTestOptions = {
               config: test.context.config,
-              globalConfig: this._globalConfig,
+              globalConfig: this.#globalConfig,
               testPath: test.path,
               rawModuleMap: watcher.isWatchMode()
                 ? test.context.moduleMap.getRawModuleMap()
