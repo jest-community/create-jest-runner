@@ -3,6 +3,13 @@
   "version": "0.11.2",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "author": "Rogelio Guzman <rogelioguzmanh@gmail.com>",
   "contributors": [
     {
