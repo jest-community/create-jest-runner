@@ -2706,9 +2706,9 @@ __metadata:
     jest: ^29.0.0
     jest-runner: ^29.0.0
     jest-worker: ^29.0.0
+    p-limit: ^3.1.0
     prettier: ^2.0.5
     strip-ansi: ^6.0.0
-    throat: ^6.0.1
     typescript: ^4.3.5
   peerDependencies:
     "@jest/test-result": ^28.0.0 || ^29.0.0
@@ -5830,13 +5830,6 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: b6937a38c80c7f84d9c11dd75e49d5c44f71d95e810a3250bd1f1797fc7117c57698204adf676b71497acc205d769d65c16ae8fa10afad832ae1322630aef10a
-  languageName: node
-  linkType: hard
-
-"throat@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "throat@npm:6.0.1"
-  checksum: 782d4171ee4e3cf947483ed2ff1af3e17cc4354c693b9d339284f61f99fbc401d171e0b0d2db3295bb7d447630333e9319c174ebd7ef315c6fb791db9675369c
   languageName: node
   linkType: hard
 

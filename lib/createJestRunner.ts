@@ -10,7 +10,7 @@ import type {
   TestWatcher,
 } from 'jest-runner';
 import { Worker, JestWorkerFarm } from 'jest-worker';
-import throat from 'throat';
+import pLimit from 'p-limit';
 import type { CreateRunnerOptions, RunTestOptions } from './types';
 
 function determineSlowTestResult(test: Test, result: TestResult): TestResult {
@@ -76,7 +76,7 @@ export default function createRunner<
       onFailure: OnTestFailure,
       options: TestRunnerOptions,
     ): Promise<void> {
-      const mutex = throat(1);
+      const mutex = pLimit(1);
       return tests.reduce(
         (promise, test) =>
           mutex(() =>
@@ -131,7 +131,7 @@ export default function createRunner<
         default: (runTestOptions: RunTestOptions) => TestResult;
       }>;
 
-      const mutex = throat(this.#globalConfig.maxWorkers);
+      const mutex = pLimit(this.#globalConfig.maxWorkers);
 
       const runTestInWorker = (test: Test) =>
         mutex(() => {
