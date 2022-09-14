@@ -28,6 +28,8 @@ class CancelRun extends Error {
   }
 }
 
+type TestRunner = (runTestOptions: RunTestOptions) => TestResult;
+
 export default function createRunner<
   ExtraOptions extends Record<string, unknown>,
 >(
@@ -76,7 +78,7 @@ export default function createRunner<
       onFailure: OnTestFailure,
       options: TestRunnerOptions,
     ): Promise<void> {
-      const runner = (await import(runPath)).default;
+      const runner: TestRunner = (await import(runPath)).default;
 
       const mutex = pLimit(1);
       return tests.reduce(
@@ -99,10 +101,6 @@ export default function createRunner<
                     options,
                     extraOptions: getExtraOptions ? getExtraOptions() : {},
                   };
-
-                  if (typeof runner.default === 'function') {
-                    return runner.default(baseOptions);
-                  }
 
                   return runner(baseOptions);
                 });
@@ -127,9 +125,7 @@ export default function createRunner<
         exposedMethods: ['default'],
         numWorkers: this.#globalConfig.maxWorkers,
         forkOptions: { stdio: 'inherit' },
-      }) as JestWorkerFarm<{
-        default: (runTestOptions: RunTestOptions) => TestResult;
-      }>;
+      }) as JestWorkerFarm<{ default: TestRunner }>;
 
       const mutex = pLimit(this.#globalConfig.maxWorkers);
 
