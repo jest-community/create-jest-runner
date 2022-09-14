@@ -68,7 +68,7 @@ export default function createRunner<
           );
     }
 
-    _createInBandTestRun(
+    async _createInBandTestRun(
       tests: Array<Test>,
       watcher: TestWatcher,
       onStart: OnTestStart,
@@ -76,6 +76,8 @@ export default function createRunner<
       onFailure: OnTestFailure,
       options: TestRunnerOptions,
     ): Promise<void> {
+      const runner = (await import(runPath)).default;
+
       const mutex = pLimit(1);
       return tests.reduce(
         (promise, test) =>
@@ -87,8 +89,6 @@ export default function createRunner<
                 }
 
                 return onStart(test).then(() => {
-                  // eslint-disable-next-line import/no-dynamic-require, global-require, @typescript-eslint/no-var-requires
-                  const runner = require(runPath);
                   const baseOptions = {
                     config: test.context.config,
                     globalConfig: this.#globalConfig,
