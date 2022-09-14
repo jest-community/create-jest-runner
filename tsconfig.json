@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node12/tsconfig.json",
+  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     /* Basic Options */
     // "allowJs": true,
@@ -11,11 +11,14 @@
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
 
+    "stripInternal": true,
     "esModuleInterop": true,
     "skipLibCheck": false,
 
     /* Additional Checks */
     "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 
