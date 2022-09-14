@@ -7,7 +7,13 @@ const supportedNodeVersion = semver.minVersion(pkg.engines.node).version;
 
 module.exports = {
   presets: [
-    ['@babel/preset-env', { targets: { node: supportedNodeVersion } }],
+    [
+      '@babel/preset-env',
+      {
+        exclude: ['@babel/plugin-proposal-dynamic-import'],
+        targets: { node: supportedNodeVersion },
+      },
+    ],
     ['@babel/preset-typescript', { allowDeclareFields: true }],
   ],
 };
