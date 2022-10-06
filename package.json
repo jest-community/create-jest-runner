@@ -87,5 +87,5 @@
   "resolutions": {
     "@types/node@*": "^14.18.23"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.4"
 }
