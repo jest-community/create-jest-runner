@@ -1895,6 +1895,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.0.0":
+  version: 18.11.16
+  resolution: "@types/node@npm:18.11.16"
+  checksum: 23603ecc1cc5afdd2311671565e1bd1a8905e18ed7f05857089eebe524824a3347dd0c3de9c1c291839f7cf21bcf5633903cdf7905efa0fdc7464cc7606fc9fa
+  languageName: node
+  linkType: hard
+
 "@types/prettier@npm:^2.1.5":
   version: 2.7.1
   resolution: "@types/prettier@npm:2.7.1"
@@ -2685,7 +2692,7 @@ __metadata:
     "@babel/preset-typescript": ^7.0.0
     "@jest/test-result": ^29.0.0
     "@tsconfig/node14": ^1.0.3
-    "@types/node": ^14.18.23
+    "@types/node": ^18.0.0
     "@typescript-eslint/eslint-plugin": ^5.14.0
     "@typescript-eslint/parser": ^5.14.0
     babel-jest: ^29.0.0
