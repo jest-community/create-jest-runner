@@ -1,5 +1,3 @@
-import { isAbsolute } from 'path';
-import { fileURLToPath } from 'url';
 import type { TestResult } from '@jest/test-result';
 import type {
   CallbackTestRunnerInterface,
@@ -32,30 +30,12 @@ class CancelRun extends Error {
 
 type TestRunner = (runTestOptions: RunTestOptions) => TestResult;
 
-function getRunnerPath(runPath: string | URL): string {
-  let path = runPath;
-
-  if (typeof path !== 'string') {
-    path = path.href;
-  }
-
-  if (path.startsWith('file://')) {
-    path = fileURLToPath(path);
-  } else if (!isAbsolute(path)) {
-    throw new Error(`Path must be absolute - got ${path}`);
-  }
-
-  return path;
-}
-
 export default function createRunner<
   ExtraOptions extends Record<string, unknown>,
 >(
-  runPathStringOrUrl: string | URL,
+  runPath: string | URL,
   { getExtraOptions }: CreateRunnerOptions<ExtraOptions> = {},
 ) {
-  const runPath = getRunnerPath(runPathStringOrUrl);
-
   return class BaseTestRunner implements CallbackTestRunnerInterface {
     #globalConfig: Config.GlobalConfig;
 
@@ -98,7 +78,7 @@ export default function createRunner<
       onFailure: OnTestFailure,
       options: TestRunnerOptions,
     ): Promise<void> {
-      const runner: TestRunner = (await import(runPath)).default;
+      const runner: TestRunner = (await import(runPath.toString())).default;
 
       const mutex = pLimit(1);
       return tests.reduce(
