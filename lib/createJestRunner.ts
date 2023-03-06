@@ -33,7 +33,7 @@ type TestRunner = (runTestOptions: RunTestOptions) => TestResult;
 export default function createRunner<
   ExtraOptions extends Record<string, unknown>,
 >(
-  runPath: string,
+  runPath: string | URL,
   { getExtraOptions }: CreateRunnerOptions<ExtraOptions> = {},
 ) {
   return class BaseTestRunner implements CallbackTestRunnerInterface {
@@ -78,7 +78,7 @@ export default function createRunner<
       onFailure: OnTestFailure,
       options: TestRunnerOptions,
     ): Promise<void> {
-      const runner: TestRunner = (await import(runPath)).default;
+      const runner: TestRunner = (await import(runPath.toString())).default;
 
       const mutex = pLimit(1);
       return tests.reduce(

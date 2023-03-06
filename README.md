@@ -29,7 +29,7 @@ module.exports = createJestRunner(require.resolve('./run'));
 
 #### createJestRunner(pathToRunFile, config?: { getExtraOptions })
 
-- `pathToRunFile`: path to your run file.
+- `pathToRunFile`: path to your run file. This must be an absolute path or a `file://` URL.
 - `config`: Optional argument for configuring the runner.
   - `getExtraOptions`: `() => object` used for passing extra options to the runner. It needs to be a serializable object because it will be send to a different Node process.
 
