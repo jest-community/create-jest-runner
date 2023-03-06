@@ -2741,6 +2741,7 @@ __metadata:
     jest-worker: ^29.5.0
     p-limit: ^3.1.0
     prettier: ^2.0.5
+    semver: ^7.3.8
     strip-ansi: ^6.0.0
     typescript: ^4.3.5
   peerDependencies:
@@ -5637,7 +5638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.3.7":
+"semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
   version: 7.3.8
   resolution: "semver@npm:7.3.8"
   dependencies:
