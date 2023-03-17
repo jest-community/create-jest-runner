@@ -21,6 +21,10 @@
     "max-classes-per-file": "off",
     "no-underscore-dangle": "off",
     "no-useless-constructor": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "fixStyle": "inline-type-imports" }
+    ],
     "@typescript-eslint/prefer-ts-expect-error": "error"
   },
   "env": {

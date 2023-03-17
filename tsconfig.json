@@ -9,7 +9,6 @@
     "outDir": "./build/",
     "noErrorTruncation": true,
     "isolatedModules": true,
-    "importsNotUsedAsValues": "error",
 
     "stripInternal": true,
     "esModuleInterop": true,
