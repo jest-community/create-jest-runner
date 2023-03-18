@@ -9,7 +9,7 @@ import type {
   TestRunnerOptions,
   TestWatcher,
 } from 'jest-runner';
-import { Worker, JestWorkerFarm } from 'jest-worker';
+import { Worker, type JestWorkerFarm } from 'jest-worker';
 import pLimit from 'p-limit';
 import type { CreateRunnerOptions, RunTestOptions } from './types';
 
