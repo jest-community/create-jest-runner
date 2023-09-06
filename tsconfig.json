@@ -21,9 +21,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Module Resolution Options */
-    "moduleResolution": "node",
-
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true
   },
