@@ -2239,11 +2239,11 @@ __metadata:
   linkType: hard
 
 "acorn@npm:^8.9.0":
-  version: 8.12.0
-  resolution: "acorn@npm:8.12.0"
+  version: 8.12.1
+  resolution: "acorn@npm:8.12.1"
   bin:
     acorn: bin/acorn
-  checksum: ae142de8739ef15a5d936c550c1d267fc4dedcdbe62ad1aa2c0009afed1de84dd0a584684a5d200bb55d8db14f3e09a95c6e92a5303973c04b9a7413c36d1df0
+  checksum: 677880034aee5bdf7434cc2d25b641d7bedb0b5ef47868a78dadabedccf58e1c5457526d9d8249cd253f2df087e081c3fe7d903b448d8e19e5131a3065b83c07
   languageName: node
   linkType: hard
 
@@ -2692,9 +2692,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001629":
-  version: 1.0.30001639
-  resolution: "caniuse-lite@npm:1.0.30001639"
-  checksum: 0d9291cc47ffaad5806716bff6fef41eec21f86a448370bc30a72823fcaf24ba5ccb4704841e6a60f078ddf2e9987e3d23f4d3ca0fffc51f6cb0400b7411ad28
+  version: 1.0.30001640
+  resolution: "caniuse-lite@npm:1.0.30001640"
+  checksum: ec492d8d1e11d1c55e0f5c0f218229369dc0a4bd1b5d0a579a6435865fe8f4c84bde7e816a844cce1b9cdd97f5a85b6dac5599639fabcdb0c4c5bd039e46cbfd
   languageName: node
   linkType: hard
 
@@ -3089,9 +3089,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.796":
-  version: 1.4.815
-  resolution: "electron-to-chromium@npm:1.4.815"
-  checksum: 049fa7eb0c9e46522bfe0cd7d025011987dbd0ac2b7418793786c6a6043af55f4f80556ede6bf0447643b274f622d69833e4557814bd2d98ce31129a6eb01afa
+  version: 1.4.818
+  resolution: "electron-to-chromium@npm:1.4.818"
+  checksum: 7ff9b1f0a17c013ff020530d35a002a6e42f6cb8207be26d25796615d7099da409351a8ee2fde0e796369251906bdbb7d32eec5dbe413547037ea0436d6287d7
   languageName: node
   linkType: hard
 
@@ -3856,8 +3856,8 @@ __metadata:
   linkType: hard
 
 "glob@npm:^10.2.2, glob@npm:^10.3.10":
-  version: 10.4.2
-  resolution: "glob@npm:10.4.2"
+  version: 10.4.3
+  resolution: "glob@npm:10.4.3"
   dependencies:
     foreground-child: ^3.1.0
     jackspeak: ^3.1.2
@@ -3867,7 +3867,7 @@ __metadata:
     path-scurry: ^1.11.1
   bin:
     glob: dist/esm/bin.mjs
-  checksum: bd7c0e30701136e936f414e5f6f82c7f04503f01df77408f177aa584927412f0bde0338e6ec541618cd21eacc57dde33e7b3c6c0a779cc1c6e6a0e14f3d15d9b
+  checksum: a1daeb570b841480fe95b3dd9492a98a58759186d14cf2ebe81057c3f308b47980d5e757b533422dbc5288ebf7b06b169960ce9f71198d7dbe320bc5068f89f0
   languageName: node
   linkType: hard
 
@@ -4436,15 +4436,15 @@ __metadata:
   linkType: hard
 
 "jackspeak@npm:^3.1.2":
-  version: 3.4.0
-  resolution: "jackspeak@npm:3.4.0"
+  version: 3.4.1
+  resolution: "jackspeak@npm:3.4.1"
   dependencies:
     "@isaacs/cliui": ^8.0.2
     "@pkgjs/parseargs": ^0.11.0
   dependenciesMeta:
     "@pkgjs/parseargs":
       optional: true
-  checksum: 350f6f311018bb175ffbe736b19c26ac0b134bb5a17a638169e89594eb0c24ab1c658ab3a2fda24ff63b3b19292e1a5ec19d2255bc526df704e8168d392bef85
+  checksum: 772483c6835f01b4e06eaaf3cf7fa65a0d5e0f2fd3b7290f657df4602b013c60efa53bebd64489862bc7a290167e7671bb41a990512c91e25d2e89c82b2628b8
   languageName: node
   linkType: hard
 
@@ -5063,9 +5063,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0":
-  version: 10.3.0
-  resolution: "lru-cache@npm:10.3.0"
-  checksum: f2289639bd94cf3c87bfd8a77ac991f9afe3af004ddca3548c3dae63ead1c73bba449a60a4e270992e16cf3261b3d4130943234d52ca3a4d4de2fc074a3cc7b5
+  version: 10.4.0
+  resolution: "lru-cache@npm:10.4.0"
+  checksum: 6816a809a225faaa29ae2075ef6493cebb7374c14fc4a56a44f2aeaa2a2dc33c83043eb4d653fc72cf3ea89507dc51def19e6e07fa57351b9f40449d7c37fb0d
   languageName: node
   linkType: hard
 
@@ -6464,22 +6464,22 @@ __metadata:
   linkType: hard
 
 "typescript@npm:^5.0.0":
-  version: 5.5.2
-  resolution: "typescript@npm:5.5.2"
+  version: 5.5.3
+  resolution: "typescript@npm:5.5.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 9c5a7982dadcb2d38d129c575dd38645ae11588ae0d4a12852fb04482bbc5a1660b2371e48fd5b33b6b605cc57cefe777670054546856945a05e77bd22c8c2cd
+  checksum: 4b4f14313484d5c86064d04ba892544801fa551f5cf72719b540b498056fec7fc192d0bbdb2ba1448e759b1548769956da9e43e7c16781e8d8856787b0575004
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^5.0.0#~builtin<compat/typescript>":
-  version: 5.5.2
-  resolution: "typescript@patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=379a07"
+  version: 5.5.3
+  resolution: "typescript@patch:typescript@npm%3A5.5.3#~builtin<compat/typescript>::version=5.5.3&hash=379a07"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: d8c8af1adb92ef36998cc9293ad8607dda68564ecc2f315a7298d6d40edae1906e0ed88e0b2b02da686adc61d638cbecb82b4c694d5bccc621b8baf6e6274f7c
+  checksum: 3c0f7fe66e0e3a5f6b531b3e20bfe4a846718d20c299a49f39d4594e0bedcf5820cb98b49a9c883f2dde7dc6942affa2c95a775ee0221ca1ef143147761b0e80
   languageName: node
   linkType: hard
 
@@ -6545,8 +6545,8 @@ __metadata:
   linkType: hard
 
 "update-browserslist-db@npm:^1.0.16":
-  version: 1.0.16
-  resolution: "update-browserslist-db@npm:1.0.16"
+  version: 1.1.0
+  resolution: "update-browserslist-db@npm:1.1.0"
   dependencies:
     escalade: ^3.1.2
     picocolors: ^1.0.1
@@ -6554,7 +6554,7 @@ __metadata:
     browserslist: ">= 4.21.0"
   bin:
     update-browserslist-db: cli.js
-  checksum: 51b1f7189c9ea5925c80154b0a6fd3ec36106d07858d8f69826427d8edb4735d1801512c69eade38ba0814d7407d11f400d74440bbf3da0309f3d788017f35b2
+  checksum: 7b74694d96f0c360f01b702e72353dc5a49df4fe6663d3ee4e5c628f061576cddf56af35a3a886238c01dd3d8f231b7a86a8ceaa31e7a9220ae31c1c1238e562
   languageName: node
   linkType: hard
 
