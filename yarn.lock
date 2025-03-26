@@ -1920,6 +1920,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^22.0.0":
+  version: 22.8.2
+  resolution: "@types/node@npm:22.8.2"
+  dependencies:
+    undici-types: ~6.19.8
+  checksum: 8d57352fe563e8de78311c2f799e8c3805cbec3840dfa54d5168588c30112d1e87a7940ebdbdcebb1f0094e26b7e626dfadd9683f5c60d8a76e9082051fea14a
+  languageName: node
+  linkType: hard
+
 "@types/semver@npm:^7.3.12, @types/semver@npm:^7.5.0":
   version: 7.5.8
   resolution: "@types/semver@npm:7.5.8"
@@ -2772,7 +2781,7 @@ __metadata:
     "@babel/preset-typescript": ^7.0.0
     "@jest/test-result": ^29.0.0
     "@tsconfig/node14": ^14.0.0
-    "@types/node": ^14.18.23
+    "@types/node": ^22.0.0
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0
     babel-jest: ^29.0.0
@@ -6533,6 +6542,13 @@ __metadata:
     has-symbols: ^1.1.0
     which-boxed-primitive: ^1.1.1
   checksum: 729f13b84a5bfa3fead1d8139cee5c38514e63a8d6a437819a473e241ba87eeb593646568621c7fc7f133db300ef18d65d1a5a60dc9c7beb9000364d93c581df
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.8":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: de51f1b447d22571cf155dfe14ff6d12c5bdaec237c765085b439c38ca8518fc360e88c70f99469162bf2e14188a7b0bcb06e1ed2dc031042b984b0bb9544017
   languageName: node
   linkType: hard
 
