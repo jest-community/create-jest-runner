@@ -1,5 +1,4 @@
 const fs = require('fs');
-// eslint-disable-next-line import/extensions, import/no-unresolved -- ignore build artifact
 const { pass, fail, skip, todo } = require('../..');
 
 /** @type {import('../..').RunTest} */

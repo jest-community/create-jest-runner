@@ -3,6 +3,7 @@ projects
 yarn-error.log
 build
 coverage
+.eslintcache
 
 # https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
 .yarn/*
