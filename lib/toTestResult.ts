@@ -26,7 +26,18 @@ function getPerfStats({ stats }: Options): TestResult['perfStats'] {
   const runtime = end - start;
   // Note: this flag is set in 'lib/createJestRunner.ts'
   const slow = false;
-  return { start, end, runtime, slow };
+  return {
+    start,
+    end,
+    runtime,
+    slow,
+    loadTestEnvironmentStart: 0,
+    loadTestEnvironmentEnd: 0,
+    setupAfterEnvStart: 0,
+    setupAfterEnvEnd: 0,
+    setupFilesStart: 0,
+    setupFilesEnd: 0,
+  };
 }
 
 function getSnapshot(): TestResult['snapshot'] {

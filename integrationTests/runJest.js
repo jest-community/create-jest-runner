@@ -1,7 +1,7 @@
 const path = require('path');
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import-x/no-extraneous-dependencies
 const execa = require('execa');
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import-x/no-extraneous-dependencies
 const stripAnsi = require('strip-ansi');
 
 const rootDir = path.resolve(__dirname, '..');
@@ -20,7 +20,6 @@ const normalize = output =>
     .replace(/\u221A/g, '\u2713');
 
 const runJest = (project, options = []) => {
-  // eslint-disable-next-line
   jest.setTimeout(15000);
   return execa(
     'jest',
