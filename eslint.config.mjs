@@ -1,4 +1,4 @@
-import { globalIgnores } from 'eslint/config';
+import { globalIgnores, defineConfig } from 'eslint/config';
 import jest from 'eslint-plugin-jest';
 import { importX } from 'eslint-plugin-import-x';
 import globals from 'globals';
@@ -6,7 +6,7 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
-export default tseslint.config(
+export default defineConfig(
   globalIgnores(['**/build/']),
   eslint.configs.recommended,
   // eslint-disable-next-line import-x/no-named-as-default-member
