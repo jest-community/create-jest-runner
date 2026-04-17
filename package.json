@@ -65,7 +65,7 @@
     "prettier": "^3.5.3",
     "semver": "^7.3.8",
     "strip-ansi": "^6.0.0",
-    "typescript": "^5.0.0",
+    "typescript": "^6.0.0",
     "typescript-eslint": "^8.0.0"
   },
   "peerDependencies": {
