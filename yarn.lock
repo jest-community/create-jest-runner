@@ -1965,10 +1965,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node14@npm:^14.0.0":
-  version: 14.1.8
-  resolution: "@tsconfig/node14@npm:14.1.8"
-  checksum: 10c0/5394a419398dc80606b1e7f780021c12b8216ddd539aadbd934cec32c775185efa92b24f702a79700d76c00ea7e2bd938db1430fd9da6e36af5d9001dc918863
+"@tsconfig/node16@npm:^16.1.0":
+  version: 16.1.9
+  resolution: "@tsconfig/node16@npm:16.1.9"
+  checksum: 10c0/d5583a0d2a21393b8a89a4bb4e77ad4d2d4c946cb8e7edf8ae751959dc27839cfc59fd9565a35bbb56c93d1b820458ee900ad1f3f51f2577f382da7c58f76f65
   languageName: node
   linkType: hard
 
@@ -2885,7 +2885,7 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.0.0"
     "@eslint/js": "npm:^9.29.0"
     "@jest/test-result": "npm:^30.0.0"
-    "@tsconfig/node14": "npm:^14.0.0"
+    "@tsconfig/node16": "npm:^16.1.0"
     "@types/node": "npm:^24.0.3"
     babel-jest: "npm:^30.0.0"
     chalk: "npm:^4.1.0"
