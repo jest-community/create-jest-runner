@@ -2900,7 +2900,7 @@ __metadata:
     jest: "npm:^30.0.0"
     jest-runner: "npm:^30.0.0"
     jest-worker: "npm:^30.0.0"
-    p-limit: "npm:^3.1.0"
+    p-limit: "npm:^7.0.0"
     prettier: "npm:^3.5.3"
     semver: "npm:^7.3.8"
     strip-ansi: "npm:^6.0.0"
@@ -4885,6 +4885,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-limit@npm:^7.0.0":
+  version: 7.3.3
+  resolution: "p-limit@npm:7.3.3"
+  dependencies:
+    yocto-queue: "npm:^1.2.1"
+  checksum: 10c0/47e0125583d81c2f5a32c96dd4a1c63cc3fc106ae8b94d00ec152caabd1f64fe22cfa58ba8b7eef47a89991fa64b3403d1549e1e41470dc787d6074f34015f34
+  languageName: node
+  linkType: hard
+
 "p-locate@npm:^4.1.0":
   version: 4.1.0
   resolution: "p-locate@npm:4.1.0"
@@ -5940,5 +5949,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"yocto-queue@npm:^1.2.1":
+  version: 1.2.2
+  resolution: "yocto-queue@npm:1.2.2"
+  checksum: 10c0/36d4793e9cf7060f9da543baf67c55e354f4862c8d3d34de1a1b1d7c382d44171315cc54abf84d8900b8113d742b830108a1434f4898fb244f9b7e8426d4b8f5
   languageName: node
   linkType: hard
