@@ -2896,7 +2896,7 @@ __metadata:
     eslint-plugin-jest: "npm:^29.0.0"
     eslint-plugin-prettier: "npm:^5.0.0"
     execa: "npm:^5.0.0"
-    globals: "npm:^16.2.0"
+    globals: "npm:^17.0.0"
     jest: "npm:^30.0.0"
     jest-runner: "npm:^30.0.0"
     jest-worker: "npm:^30.0.0"
@@ -3641,10 +3641,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^16.2.0":
-  version: 16.5.0
-  resolution: "globals@npm:16.5.0"
-  checksum: 10c0/615241dae7851c8012f5aa0223005b1ed6607713d6813de0741768bd4ddc39353117648f1a7086b4b0fa45eae733f1c0a0fe369aa4e543bb63f8de8990178ea9
+"globals@npm:^17.0.0":
+  version: 17.14.0
+  resolution: "globals@npm:17.14.0"
+  checksum: 10c0/422d17c24e87170d4aa566b97a53339ae451c2f4d78512594a7ca951cdb939bc4a85c10071e6dcf77ca63de48713a77f2e71eb9214e44880233dff2090e92731
   languageName: node
   linkType: hard
 
